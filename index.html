@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raxford Apps - منصة ريدبيلي</title>
+<style>
+/* قاعدة عامة */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    animation: fadeInBody 1.5s ease-in-out;
+}
+@keyframes fadeInBody {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #444, #000);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #666, #111); }
+
+/* هيدر متحرك */
+header {
+    background: linear-gradient(270deg, #000, #222, #000);
+    background-size: 600% 600%;
+    animation: gradientBG 15s ease infinite, dropHeader 1.5s ease;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+@keyframes gradientBG {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+}
+@keyframes dropHeader {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+}
+header h1 { 
+    font-size: 28px; 
+    margin-bottom: 10px; 
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
+    opacity: 0;
+    animation: fadeInTitle 2s ease forwards;
+}
+@keyframes fadeInTitle {
+    from {opacity: 0; transform: translateY(-15px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
+header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
+
+/* زر الهامبرغر */
+.menu-btn {
+    position: absolute; top: 20px; left: 20px;
+    cursor: pointer; width: 35px; height: 25px;
+    display: flex; flex-direction: column; justify-content: space-between; z-index: 1001;
+}
+.menu-btn div {
+    height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, #fff, #ccc);
+    transition: all 0.5s ease;
+}
+.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px);}
+.menu-btn.open div:nth-child(2){opacity:0;}
+.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
+
+/* قائمة جانبية */
+.sidebar-overlay{
+    position: fixed; top:0; left:0; width:0; height:100%;
+    background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000;
+}
+.sidebar-overlay.active{ width:100%; }
+.sidebar{
+    position: fixed; top:0; left:-320px; width:320px; height:100%;
+    background: linear-gradient(180deg, #111, #333);
+    box-shadow: 4px 0 25px rgba(0,0,0,0.5);
+    padding-top:60px; transition:left 0.5s ease;
+    display:flex; flex-direction:column; border-top-right-radius:15px; border-bottom-right-radius:15px; z-index:1000;
+}
+.sidebar.active{ left:0; }
+.sidebar a{
+    display:block; padding:18px 30px; color:#fff; text-decoration:none; font-weight:bold;
+    margin:10px 15px; border-radius:12px; text-align:left; background: rgba(255,255,255,0.05);
+    transition: all 0.4s ease; font-size:17px; transform: translateX(-20px); opacity:0;
+    animation: fadeInSide 0.5s forwards;
+}
+.sidebar.active a:nth-child(1){ animation-delay:0.1s; }
+.sidebar.active a:nth-child(2){ animation-delay:0.2s; }
+@keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
+.sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+/* بطاقات التطبيق */
+.apps-container{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px; padding:40px 20px; max-width:800px; margin:auto;
+}
+.app-card{
+    background: linear-gradient(145deg,#fff,#f5f5f5);
+    border-radius:18px; box-shadow:0 12px 25px rgba(0,0,0,0.15);
+    text-align:center; padding:25px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
+    animation: fadeUp 1s ease;
+}
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+.app-card:hover{
+    transform: translateY(-12px) rotateX(3deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    background: linear-gradient(145deg,#e8e8e8,#ffffff);
+}
+.app-card img{ width:120px; height:120px; object-fit:cover; margin-bottom:15px; border-radius:15px; transition: transform 0.5s ease, box-shadow 0.5s ease; }
+.app-card img:hover{ transform: rotate(-5deg) scale(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+.app-card h3{ font-size:20px; margin-bottom:10px; text-shadow:1px 1px 2px rgba(0,0,0,0.1); }
+.app-card p{ font-size:14px; margin-bottom:15px; color:#555; }
+.app-card a{
+    display:inline-block; padding:12px 25px;
+    background: linear-gradient(90deg,#000,#444); color:white; text-decoration:none;
+    border-radius:10px; font-weight:bold; transition: all 0.4s ease;
+}
+.app-card a:hover{ background:linear-gradient(90deg,#555,#000); transform:scale(1.1); box-shadow: 0 0 12px rgba(0,0,0,0.4); }
+
+/* Footer */
+footer{
+    text-align:center; padding:25px 0; background-color:#000; color:white; margin-top:40px;
+    animation: riseFooter 1.5s ease;
+}
+@keyframes riseFooter {
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width:600px){ .sidebar{ width:250px; } .app-card img{ width:100px; height:100px; } }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="menu-btn" id="menu-btn" onclick="toggleSidebar()">
+        <div></div><div></div><div></div>
+    </div>
+    <h1>Raxford Apps</h1>
+    <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="Redbily Logo">
+</header>
+
+<!-- قائمة جانبية -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+<div class="sidebar" id="sidebar">
+    <a href="#">خدمات الشركة</a>
+    <a href="#">تواصل معنا</a>
+</div>
+
+<!-- قسم التطبيق الرئيسي -->
+<div class="apps-container">
+    <div class="app-card">
+        <img src="https://up6.cc/2025/10/176285050708941.png" alt="Redbily Logo">
+        <h3>منصة ريدبيلي</h3>
+        <p>منصّة تواصل اجتماعي قائمة على الفكر، صُمّمت لدائرة نخبوية من الأطباء والعلماء والباحثين في الشرق الأوسط. تركّز على استكشاف طبيعة العلاقات بين الجنسين، وتوفّر مساحات مفتوحة للنشر والتعبير والنقاش العميق دون قيود. يُخصَّص النشر للخبراء المختارين فقط، بينما تُفتح خانة التعليقات للجميع لمشاركة آرائهم بحرية.</p>
+        <a href="#">تحميل</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 Raxford Company - جميع الحقوق محفوظة
+</footer>
+
+<script>
+/* فتح وإغلاق القائمة الجانبية */
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('sidebar-overlay').classList.toggle('active');
+    document.getElementById('menu-btn').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
