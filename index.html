@@ -3,21 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raxford Apps</title>
+<title>Raxford Apps</title> <!-- العنوان الآن يظهر فقط للمستخدم -->
 
 <style>
+/* تعريف الخط المحلي */
 @font-face {
     font-family: 'MyFont';
     src: url('font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+/* تطبيق الخط على كل العناصر */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'MyFont', 'Segoe UI', Arial, sans-serif;
 }
+
+/* Body */
 body {
     background-color: #f0f2f5;
     color: #333;
@@ -25,10 +30,13 @@ body {
     scroll-behavior: smooth;
     animation: fadeInBody 1.5s ease-in-out;
 }
+
 @keyframes fadeInBody {
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
 }
+
+/* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #111; }
 ::-webkit-scrollbar-thumb {
@@ -36,6 +44,8 @@ body {
     border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #666, #111); }
+
+/* Header */
 header {
     background: linear-gradient(270deg, #000, #222, #000);
     background-size: 600% 600%;
@@ -68,6 +78,8 @@ header h1 {
 }
 header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
 header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
+
+/* زر الهامبرغر */
 .menu-btn {
     position: absolute; top: 20px; left: 20px;
     cursor: pointer; width: 35px; height: 25px;
@@ -81,6 +93,8 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 .menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px);}
 .menu-btn.open div:nth-child(2){opacity:0;}
 .menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
+
+/* قائمة جانبية */
 .sidebar-overlay{
     position: fixed; top:0; left:0; width:0; height:100%;
     background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000;
@@ -104,6 +118,8 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 .sidebar.active a:nth-child(2){ animation-delay:0.2s; }
 @keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
 .sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+/* بطاقات التطبيق */
 .apps-container{
     display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px; padding:40px 20px; max-width:800px; margin:auto;
@@ -134,6 +150,8 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
     border-radius:10px; font-weight:bold; transition: all 0.4s ease;
 }
 .app-card a:hover{ background:linear-gradient(90deg,#555,#000); transform:scale(1.1); box-shadow: 0 0 12px rgba(0,0,0,0.4); }
+
+/* Footer */
 footer{
     text-align:center; padding:25px 0; background-color:#000; color:white; margin-top:40px;
     animation: riseFooter 1.5s ease;
@@ -142,6 +160,8 @@ footer{
     from {transform: translateY(100%); opacity: 0;}
     to {transform: translateY(0); opacity: 1;}
 }
+
+/* Responsive */
 @media (max-width:600px){ .sidebar{ width:250px; } .app-card img{ width:100px; height:100px; } }
 </style>
 </head>
@@ -155,18 +175,20 @@ footer{
     <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="Redbily Logo">
 </header>
 
+<!-- قائمة جانبية -->
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 <div class="sidebar" id="sidebar">
-    <a href="index.html">خدمات الشركة</a>
+    <a href="#">خدمات الشركة</a>
     <a href="#">تواصل معنا</a>
 </div>
 
+<!-- قسم التطبيق الرئيسي -->
 <div class="apps-container">
     <div class="app-card">
         <img src="https://up6.cc/2025/10/176285050708941.png" alt="Redbily Logo">
-        <h3>منصة ريدبيلي</h3>
+        <h3>منصة ريدبيلي</h3> <!-- يبقى ظاهر داخل البطاقة -->
         <p>منصّة تواصل اجتماعي قائمة على الفكر، صُمّمت لدائرة نخبوية من الأطباء والعلماء والباحثين في الشرق الأوسط. تركّز على استكشاف طبيعة العلاقات بين الجنسين، وتوفّر مساحات مفتوحة للنشر والتعبير والنقاش العميق دون قيود. يُخصَّص النشر للخبراء المختارين فقط، بينما تُفتح خانة التعليقات للجميع لمشاركة آرائهم بحرية.</p>
-        <a href="#">تحميل</a>
+        <a href="#">تحميل</a> <!-- زر التحميل -->
     </div>
 </div>
 
@@ -175,6 +197,7 @@ footer{
 </footer>
 
 <script>
+/* فتح وإغلاق القائمة الجانبية */
 function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('sidebar-overlay').classList.toggle('active');
