@@ -6,7 +6,6 @@
 <title>Raxford Apps - من نحن؟</title>
 
 <style>
-/* تعريف الخط المحلي */
 @font-face {
     font-family: 'MyFont';
     src: url('font.ttf') format('truetype');
@@ -14,7 +13,6 @@
     font-style: normal;
 }
 
-/* تطبيق الخط على كل العناصر */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,7 +20,6 @@
     font-family: 'MyFont', 'Segoe UI', Arial, sans-serif;
 }
 
-/* Body */
 body {
     background-color: #f0f2f5;
     color: #333;
@@ -36,7 +33,6 @@ body {
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #111; }
 ::-webkit-scrollbar-thumb {
@@ -45,7 +41,6 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #666, #111); }
 
-/* Header */
 header {
     background: linear-gradient(270deg, #000, #222, #000);
     background-size: 600% 600%;
@@ -79,7 +74,6 @@ header h1 {
 header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
 header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
 
-/* زر الهامبرغر */
 .menu-btn {
     position: absolute; top: 20px; left: 20px;
     cursor: pointer; width: 35px; height: 25px;
@@ -94,7 +88,6 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 .menu-btn.open div:nth-child(2){opacity:0;}
 .menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
 
-/* قائمة جانبية */
 .sidebar-overlay{
     position: fixed; top:0; left:0; width:0; height:100%;
     background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000;
@@ -117,11 +110,10 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 .sidebar.active a:nth-child(1){ animation-delay:0.1s; }
 .sidebar.active a:nth-child(2){ animation-delay:0.2s; }
 .sidebar.active a:nth-child(3){ animation-delay:0.3s; }
-.sidebar.active a:nth-child(4){ animation-delay:0.4s; } /* التأخير للرابط الجديد */
+.sidebar.active a:nth-child(4){ animation-delay:0.4s; }
 @keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
 .sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
 
-/* قسم المحتوى */
 .about-container{
     max-width:800px; margin:50px auto; padding:0 20px; text-align:right;
     background: linear-gradient(145deg,#fff,#f5f5f5); border-radius:18px;
@@ -136,7 +128,6 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
     font-size:16px; color:#555; line-height:1.7; margin-bottom:20px;
 }
 
-/* Footer */
 footer{
     text-align:center; padding:25px 0; background-color:#000; color:white; margin-top:40px;
     animation: riseFooter 1.5s ease;
@@ -146,7 +137,6 @@ footer{
     to {transform: translateY(0); opacity: 1;}
 }
 
-/* Responsive */
 @media (max-width:600px){ .sidebar{ width:250px; } }
 </style>
 </head>
@@ -160,16 +150,14 @@ footer{
     <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="Redbily Logo">
 </header>
 
-<!-- قائمة جانبية بعد التعديل -->
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 <div class="sidebar" id="sidebar">
     <a href="index.html">خدمات الشركة</a>
     <a href="#">تواصل معنا</a>
     <a href="info.html">من نحن؟</a>
-    <a href="Privacy_Policy.html">سياسة الخصوصية</a> <!-- الرابط الجديد -->
+    <a href="Privacy_Policy.html">سياسة الخصوصية</a>
 </div>
 
-<!-- قسم المحتوى -->
 <div class="about-container">
     <h2>من نحن؟</h2>
     <p>نحن شركة تطبيقات خدمية، نختص بتطوير منصات ذكية تسهّل الحياة اليومية للمستخدمين وتوفّر حلول تقنية متقدمة للشركات والمؤسسات. نحرص على دمج أحدث التقنيات مع تصميم جذاب وسهل الاستخدام لتقديم تجربة استثنائية.</p>
@@ -182,7 +170,6 @@ footer{
 </footer>
 
 <script>
-/* فتح وإغلاق القائمة الجانبية */
 function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('sidebar-overlay').classList.toggle('active');
