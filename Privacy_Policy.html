@@ -112,8 +112,73 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 .sidebar.active a:nth-child(3){ animation-delay:0.3s; }
 .sidebar.active a:nth-child(4){ animation-delay:0.4s; }
 @keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
+.sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+.about-container{
+    max-width:800px; margin:50px auto; padding:0 20px; text-align:right;
+    background: linear-gradient(145deg,#fff,#f5f5f5); border-radius:18px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.15); padding:40px 30px;
+    animation: fadeUp 1s ease;
+}
+.about-container h2{
+    font-size:26px; margin-bottom:20px; color:#222; text-align:center;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.1);
+}
+.about-container p{
+    font-size:16px; color:#555; line-height:1.7; margin-bottom:20px;
+}
+
+footer{
+    text-align:center; padding:25px 0; background-color:#000; color:white; margin-top:40px;
+    animation: riseFooter 1.5s ease;
+}
+@keyframes riseFooter {
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@media (max-width:600px){ .sidebar{ width:250px; } }
 </style>
 </head>
 <body>
+
+<header>
+    <div class="menu-btn" id="menu-btn" onclick="toggleSidebar()">
+        <div></div><div></div><div></div>
+    </div>
+    <h1>Raxford Apps</h1>
+    <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="Redbily Logo">
+</header>
+
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+<div class="sidebar" id="sidebar">
+    <a href="index.html">خدمات الشركة</a>
+    <a href="#">تواصل معنا</a>
+    <a href="info.html">من نحن؟</a>
+    <a href="Privacy_Policy.html">سياسة الخصوصية</a>
+</div>
+
+<div class="about-container">
+    <h2>سياسة الخصوصية</h2>
+    <p>نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية عند استخدامك لتطبيقاتنا ومنصاتنا.</p>
+    <p>نقوم بجمع المعلومات الأساسية التي تزودنا بها عند التسجيل أو استخدام خدماتنا، مثل الاسم، البريد الإلكتروني، ورقم الهاتف. هذه البيانات تُستخدم لتحسين تجربتك وتقديم الدعم المناسب.</p>
+    <p>قد نستخدم ملفات تعريف الارتباط (Cookies) لتحسين أداء الموقع وتحليل سلوك المستخدمين، مع الالتزام بعدم مشاركة هذه المعلومات مع أي طرف ثالث دون موافقتك.</p>
+    <p>في حال التعامل مع مدفوعات إلكترونية أو وساطة مالية، تُخزن البيانات بأمان شديد ولا يتم مشاركتها إلا لتأمين عملية الدفع والتواصل بين الطرفين.</p>
+    <p>لديك الحق في طلب الاطلاع على بياناتك، تعديلها، أو حذفها في أي وقت من خلال التواصل معنا.</p>
+    <p>نحن نسعى باستمرار لضمان التزامنا بمعايير الحماية الدولية وحماية خصوصيتك أثناء استخدام خدماتنا.</p>
+</div>
+
+<footer>
+    © 2025 Raxford Company - جميع الحقوق محفوظة
+</footer>
+
+<script>
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('sidebar-overlay').classList.toggle('active');
+    document.getElementById('menu-btn').classList.toggle('open');
+}
+</script>
+
 </body>
 </html>
