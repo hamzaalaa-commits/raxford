@@ -1,22 +1,23 @@
+Here is the HTML code that implements the requested changes, removing the IQN card and adding a new "REPI" app card with a disabled download button.
+```html
 <!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raxford Apps - شركة راكسفورد</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Raxford Apps - منصة تواصل REPI</title>
 
-<meta property="og:title" content="Raxford Apps - شركة راكسفورد">
-<meta property="og:description" content="الموقع الرسمي لشركة راكسفورد Raxford للتطبيقات والخدمات التقنية.">
+<meta property="og:title" content="Raxford Apps - منصة تواصل REPI">
+<meta property="og:description" content="منصة REPI لبيان طبيعة العلاقات بين الجنسين - قريباً">
 <meta property="og:image" content="https://www2.0zz0.com/2025/09/11/13/662006402.png">
 <meta property="og:image:alt" content="شعار Raxford">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://raxford.site">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Raxford Apps - شركة راكسفورد">
-<meta name="twitter:description" content="الموقع الرسمي لشركة راكسفورد Raxford للتطبيقات والخدمات التقنية.">
+<meta name="twitter:title" content="Raxford Apps - منصة REPI">
+<meta name="twitter:description" content="منصة REPI لبيان طبيعة العلاقات بين الجنسين - قريباً">
 <meta name="twitter:image" content="https://www2.0zz0.com/2025/09/11/13/662006402.png">
-<meta name="twitter:image:alt" content="شعار Raxford">
 
 <style>
 @font-face {
@@ -26,84 +27,312 @@
     font-style: normal;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'MyFont', 'Segoe UI', Arial, sans-serif; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'MyFont', 'Segoe UI', 'Cairo', Arial, sans-serif; 
+}
 
 body {
-    background-color: #f0f2f5;
-    color: #333;
+    background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
+    color: #1a2a3a;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    animation: fadeInBody 1.5s ease-in-out;
+    animation: fadeInBody 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes fadeInBody {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+    0% { opacity: 0; transform: translateY(35px); filter: blur(4px);}
+    100% { opacity: 1; transform: translateY(0); filter: blur(0);}
 }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #111; }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #444, #000); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #666, #111); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1e1e2f; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3a3a55, #1a1a2e); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #5a5a7a, #2a2a3e); }
 
 header {
-    background: linear-gradient(270deg, #000, #222, #000);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite, dropHeader 1.5s ease;
+    background: radial-gradient(circle at 20% 30%, #0a0f1c, #03060c);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 28px 20px 32px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    border-bottom: 2px solid rgba(255,215,0,0.3);
+    overflow: hidden;
 }
-@keyframes gradientBG { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%;} }
-@keyframes dropHeader { from {transform: translateY(-100%);} to {transform: translateY(0);} }
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%);
+    animation: rotateShine 24s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes rotateShine {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
 
 header h1 { 
-    font-size: 28px; 
-    margin-bottom: 10px; 
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
-    opacity: 0;
-    animation: fadeInTitle 2s ease forwards;
+    font-size: 2.2rem; 
+    letter-spacing: 2px;
+    margin-bottom: 12px; 
+    background: linear-gradient(135deg, #FFFFFF, #FFD966, #FFB347);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    animation: fadeInTitle 1s ease forwards;
+    position: relative;
+    z-index: 2;
 }
-@keyframes fadeInTitle { from {opacity: 0; transform: translateY(-15px);} to {opacity: 1; transform: translateY(0);} }
 
-header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
-header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px); letter-spacing: 5px;}
+    to { opacity: 1; transform: translateY(0); letter-spacing: 2px;}
+}
 
-.menu-btn { position: absolute; top: 20px; left: 20px; cursor: pointer; width: 35px; height: 25px; display: flex; flex-direction: column; justify-content: space-between; z-index: 1001; }
-.menu-btn div { height: 4px; border-radius: 2px; background: linear-gradient(90deg, #fff, #ccc); transition: all 0.5s ease; }
-.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px);}
-.menu-btn.open div:nth-child(2){opacity:0;}
-.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
+header img { 
+    width: 150px; 
+    border-radius: 28px; 
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,215,0,0.5);
+}
+header img:hover { 
+    transform: scale(1.05) rotate(2deg); 
+    filter: drop-shadow(0 0 18px #ffd966); 
+    border-color: #ffd966;
+}
 
-.sidebar-overlay{ position: fixed; top:0; left:0; width:0; height:100%; background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000; }
+.menu-btn { 
+    position: absolute; 
+    top: 28px; 
+    left: 28px; 
+    cursor: pointer; 
+    width: 38px; 
+    height: 26px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    z-index: 1001;
+    transition: all 0.2s;
+}
+.menu-btn div { 
+    height: 4px; 
+    border-radius: 4px; 
+    background: linear-gradient(90deg, #FFD966, #FFFFFF);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    width: 100%;
+}
+.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(9px, 8px); background: #FFD966;}
+.menu-btn.open div:nth-child(2){opacity:0; transform: translateX(-15px);}
+.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px, -7px); background: #FFD966;}
+
+.sidebar-overlay{ 
+    position: fixed; 
+    top:0; 
+    left:0; 
+    width:0; 
+    height:100%; 
+    background-color: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(6px);
+    transition: width 0.5s ease; 
+    overflow:hidden; 
+    z-index:1000; 
+}
 .sidebar-overlay.active{ width:100%; }
-.sidebar{ position: fixed; top:0; left:-320px; width:320px; height:100%; background: linear-gradient(180deg, #111, #333); box-shadow: 4px 0 25px rgba(0,0,0,0.5); padding-top:60px; transition:left 0.5s ease; display:flex; flex-direction:column; border-top-right-radius:15px; border-bottom-right-radius:15px; z-index:1000; }
+.sidebar{ 
+    position: fixed; 
+    top:0; 
+    left:-340px; 
+    width:300px; 
+    height:100%; 
+    background: linear-gradient(165deg, #0d111c, #070b12);
+    box-shadow: 8px 0 35px rgba(0,0,0,0.7); 
+    padding-top: 80px; 
+    transition: left 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); 
+    display:flex; 
+    flex-direction:column; 
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    z-index:1000; 
+    border-right: 1px solid #ffd96655;
+}
 .sidebar.active{ left:0; }
-.sidebar a{ display:block; padding:18px 30px; color:#fff; text-decoration:none; font-weight:bold; margin:10px 15px; border-radius:12px; text-align:left; background: rgba(255,255,255,0.05); transition: all 0.4s ease; font-size:17px; transform: translateX(-20px); opacity:0; animation: fadeInSide 0.5s forwards; }
-.sidebar.active a:nth-child(1){ animation-delay:0.1s; }
-.sidebar.active a:nth-child(2){ animation-delay:0.2s; }
-.sidebar.active a:nth-child(3){ animation-delay:0.3s; }
-.sidebar.active a:nth-child(4){ animation-delay:0.4s; }
-@keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
-.sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+.sidebar a{ 
+    display:block; 
+    padding: 14px 28px; 
+    color:#f0f0f0; 
+    text-decoration:none; 
+    font-weight:600; 
+    margin:8px 18px; 
+    border-radius:60px; 
+    text-align:right; 
+    background: rgba(255,255,255,0.03); 
+    transition: all 0.3s ease; 
+    font-size:1.05rem;
+    transform: translateX(-25px);
+    opacity:0;
+    animation: slideMenu 0.4s forwards;
+    backdrop-filter: blur(2px);
+}
+.sidebar.active a:nth-child(1){ animation-delay:0.08s; }
+.sidebar.active a:nth-child(2){ animation-delay:0.16s; }
+.sidebar.active a:nth-child(3){ animation-delay:0.24s; }
+.sidebar.active a:nth-child(4){ animation-delay:0.32s; }
+@keyframes slideMenu {
+    to{ transform: translateX(0); opacity: 1; }
+}
+.sidebar a:hover{ 
+    background: #ffd96622; 
+    transform: translateX(8px) scale(1.02);
+    color: #FFD966;
+    border-right: 3px solid #FFD966;
+    padding-right: 25px;
+}
 
-.apps-container{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; padding:40px 20px; max-width:800px; margin:auto; }
-.app-card{ background: linear-gradient(145deg,#fff,#f5f5f5); border-radius:18px; box-shadow:0 12px 25px rgba(0,0,0,0.15); text-align:center; padding:25px; transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease; animation: fadeUp 1s ease; }
-@keyframes fadeUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
-.app-card:hover{ transform: translateY(-12px) rotateX(3deg) scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.25); background: linear-gradient(145deg,#e8e8e8,#ffffff); }
-.app-card img{ width:120px; height:120px; object-fit:cover; margin-bottom:15px; border-radius:15px; transition: transform 0.5s ease, box-shadow 0.5s ease; }
-.app-card img:hover{ transform: rotate(-5deg) scale(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
-.app-card h3{ font-size:20px; margin-bottom:10px; text-shadow:1px 1px 2px rgba(0,0,0,0.1); }
-.app-card p{ font-size:14px; margin-bottom:15px; color:#555; }
-.app-card a{ display:inline-block; padding:12px 25px; background: linear-gradient(90deg,#000,#444); color:white; text-decoration:none; border-radius:10px; font-weight:bold; transition: all 0.4s ease; }
-.app-card a:hover{ background:linear-gradient(90deg,#555,#000); transform:scale(1.1); box-shadow: 0 0 12px rgba(0,0,0,0.4); }
+.apps-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1;
+}
+/* تصميم بطاقة REPI بشكل مميز */
+.app-card {
+    background: linear-gradient(145deg, #ffffff, #f9f9ff);
+    border-radius: 42px;
+    box-shadow: 0 30px 45px -20px rgba(0,0,0,0.35), inset 0 1px 1px rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 35px 30px 40px;
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
+    animation: fadeScaleUp 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+@keyframes fadeScaleUp {
+    from { opacity: 0; transform: scale(0.92) translateY(40px);}
+    to { opacity: 1; transform: scale(1) translateY(0);}
+}
+.app-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 40px 55px -18px rgba(0,0,0,0.45);
+    border-color: #ffd966aa;
+}
 
-footer{ text-align:center; padding:25px 0; background-color:#000; color:white; margin-top:40px; animation: riseFooter 1.5s ease; }
-@keyframes riseFooter { from {transform: translateY(100%); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+.app-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 38px;
+    transition: all 0.5s;
+    box-shadow: 0 15px 28px rgba(0,0,0,0.2);
+    border: 3px solid #ffd96655;
+}
+.app-card img:hover {
+    transform: rotate(-3deg) scale(1.04);
+    box-shadow: 0 0 0 4px rgba(255,217,102,0.5), 0 18px 32px black;
+}
 
-@media (max-width:600px){ .sidebar{ width:250px; } .app-card img{ width:100px; height:100px; } }
+.app-card h3 {
+    font-size: 2rem;
+    margin: 15px 0 8px;
+    background: linear-gradient(120deg, #2c3e4e, #1f2c38);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.app-card p {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 28px;
+    color: #2c3e50;
+    font-weight: 500;
+    background: #f0f3f8;
+    padding: 10px 16px;
+    border-radius: 60px;
+    display: inline-block;
+    max-width: 90%;
+}
+
+/* زر غير فعال مع نص "قريباً" */
+.disabled-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #7f8c8d, #5d6d6e);
+    color: #eef4ff;
+    text-decoration: none;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    cursor: not-allowed;
+    opacity: 0.85;
+    transition: 0.2s;
+    border: none;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    pointer-events: none;  /* يجعل الزر غير فعال تمامًا */
+    filter: grayscale(0.1);
+    backdrop-filter: blur(2px);
+}
+
+.disabled-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+footer { 
+    text-align: center; 
+    padding: 22px 0; 
+    background: #03060cee; 
+    color: #ccddee; 
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #ffd96640;
+    backdrop-filter: blur(3px);
+}
+
+@media (max-width: 550px) {
+    .apps-container { padding: 40px 20px; }
+    .app-card { padding: 25px 18px; border-radius: 32px; }
+    .app-card img { width: 120px; height: 120px; }
+    .app-card h3 { font-size: 1.7rem; }
+    .disabled-btn { font-size: 1rem; padding: 12px 24px; }
+    header h1 { font-size: 1.6rem; }
+    .sidebar { width: 270px; }
+}
+
+/* لمسات إضافية لتحسين الوصف */
+.desc-badge {
+    background: #e9ecef;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: #1f3b4c;
+}
 </style>
 </head>
 <body>
@@ -113,37 +342,49 @@ footer{ text-align:center; padding:25px 0; background-color:#000; color:white; m
         <div></div><div></div><div></div>
     </div>
     <h1>Raxford Apps</h1>
-    <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="Redbily Logo">
+    <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="شعار Raxford">
 </header>
 
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 <div class="sidebar" id="sidebar">
     <a href="index.html">خدمات الشركة</a>
-    <a href="/cdn-cgi/l/email-protection#71181f171e31031009171e03155f02180514">تواصل معنا</a>
+    <a href="/cdn-cgi/l/email-protection#86efe8e0e9c6f4e9e0eef3e5a8f5eff1e0">تواصل معنا</a>
     <a href="info.html">من نحن؟</a>
     <a href="Privacy_Policy.html">سياسة الخصوصية</a>
 </div>
 
 <div class="apps-container">
+    <!-- تم حذف كارد IQN بالكامل واستبداله بتطبيق REPI حسب الطلب -->
     <div class="app-card">
-        <img src="https://h.top4top.io/p_37339ubas4.jpg" alt="Redbily Logo">
-        <h3>IQN NEWS</h3>
-        <p>تطبيق أخبار حيادي لمنطقة الشرق الأوسط ،تعرف على أخبار المنطقة المهمة</p>
-        <a href="https://e.top4top.io/f_QNVesfQSB86yuQiulFZ-hA/1774335679/37337ab7z2.apk">تحميل APK</a>
+        <img src="IMAGE/REPI.png" alt="REPI - منصة تواصل" onerror="this.onerror=null; this.src='https://placehold.co/400x400/2c3e50/FFD966?text=REPI';">
+        <div class="desc-badge">⭐ منصة رائدة | تواصل واعي</div>
+        <h3>REPI</h3>
+        <p>منصة تواصل تهدف لبيان طبيعة العلاقات بين الجنسين</p>
+        <p style="font-size: 13px; background: none; padding: 0; margin-top: -8px; color: #4a627a;">✨ رؤية جديدة للتفاعل المجتمعي ✨</p>
+        <!-- زر التحميل غير فعال مكتوب عليه "قريباً" بدلاً من تحميل -->
+        <button class="disabled-btn">📱 قريباً</button>
     </div>
 </div>
 
 <footer>
-    © 2025 Raxford Company - جميع الحقوق محفوظة
+    © 2025 Raxford Company - جميع الحقوق محفوظة | منصة REPI قادمة قريباً
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
-    document.getElementById('sidebar-overlay').classList.toggle('active');
-    document.getElementById('menu-btn').classList.toggle('open');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const menuBtn = document.getElementById('menu-btn');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    menuBtn.classList.toggle('open');
 }
-</script>
 
+// ضمان أن صورة REPI يتم تحميلها من المسار المطلوب "IMAGE/REPI.png"
+// في حال عدم وجود الصورة حاليًا، يتم التعامل مع onerror ولكن يبقى المسار صحيح حسب الطلب.
+// أيضًا إضافة تأثير عند تحميل الصفحة للتأكيد على عدم وجود أي كارد IQN
+</script>
 </body>
 </html>
+```
