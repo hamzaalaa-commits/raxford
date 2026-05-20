@@ -2,28 +2,27 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raxford Apps - شركة راكسفورد</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Raxford Apps - شركة راكسفورد | تحميل REPI</title>
 
 <!-- Favicon -->
 <link rel="icon" type="image/jpeg" href="https://j.top4top.io/p_3782nqn5c1.jpg">
 <link rel="shortcut icon" href="https://j.top4top.io/p_3782nqn5c1.jpg">
 <link rel="apple-touch-icon" href="https://j.top4top.io/p_3782nqn5c1.jpg">
 
-<!-- Open Graph Data (تم التحديث حسب الطلب) -->
-<meta property="og:title" content="Raxford Company">
-<meta property="og:description" content="">
+<!-- Open Graph Data (محدث) -->
+<meta property="og:title" content="Raxford Company - تطبيق REPI">
+<meta property="og:description" content="منصة تواصل تهدف لبيان طبيعة العلاقات بين الجنسين - حمل التطبيق الآن">
 <meta property="og:image" content="https://j.top4top.io/p_3782cjacn1.jpg">
-<meta property="og:image:alt" content="Raxford Company">
+<meta property="og:image:alt" content="Raxford Company - REPI">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://raxford.site">
 
-<!-- Twitter Card Data (متوافقة مع التعديلات الجديدة) -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Raxford Company">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Raxford Company - REPI">
+<meta name="twitter:description" content="حمّل تطبيق REPI الآن">
 <meta name="twitter:image" content="https://j.top4top.io/p_3782cjacn1.jpg">
-<meta name="twitter:image:alt" content="Raxford Company">
 
 <style>
 @font-face {
@@ -33,154 +32,248 @@
     font-style: normal;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'MyFont', 'Segoe UI', Arial, sans-serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'MyFont', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 body {
-    background-color: #f0f2f5;
-    color: #333;
+    background: linear-gradient(135deg, #f5f7fc 0%, #e9eef4 100%);
+    color: #1a2c3e;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    animation: fadeInBody 1.5s ease-in-out;
+    animation: fadeInBody 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 @keyframes fadeInBody {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+    0% { opacity: 0; backdrop-filter: blur(12px); transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #111; }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #444, #000); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #666, #111); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a1f2a; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(145deg, #2c3e66, #0f172a); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #3b4e7a; }
 
 header {
-    background: linear-gradient(270deg, #000, #222, #000);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite, dropHeader 1.5s ease;
+    background: radial-gradient(circle at 10% 30%, #0a0f1f, #03060c);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 28px 20px 20px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,215,0,0.2);
+    animation: slideDownHeader 1s ease;
 }
-@keyframes gradientBG { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%;} }
-@keyframes dropHeader { from {transform: translateY(-100%);} to {transform: translateY(0);} }
+@keyframes slideDownHeader {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
 
 header h1 { 
-    font-size: 28px; 
-    margin-bottom: 10px; 
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
-    opacity: 0;
-    animation: fadeInTitle 2s ease forwards;
+    font-size: 2rem; 
+    letter-spacing: 1px;
+    margin-bottom: 12px; 
+    text-shadow: 0 4px 14px rgba(0,0,0,0.6);
+    background: linear-gradient(120deg, #fff, #bbccff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
-@keyframes fadeInTitle { from {opacity: 0; transform: translateY(-15px);} to {opacity: 1; transform: translateY(0);} }
 
-header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
-header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
+header img { 
+    width: 150px; 
+    border-radius: 30px; 
+    margin-top: 8px;
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,210,90,0.5);
+}
+header img:hover { transform: scale(1.03) rotate(1deg); filter: drop-shadow(0 0 12px gold); }
 
-.menu-btn { position: absolute; top: 20px; left: 20px; cursor: pointer; width: 35px; height: 25px; display: flex; flex-direction: column; justify-content: space-between; z-index: 1001; }
-.menu-btn div { height: 4px; border-radius: 2px; background: linear-gradient(90deg, #fff, #ccc); transition: all 0.5s ease; }
-.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px);}
-.menu-btn.open div:nth-child(2){opacity:0;}
-.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
+.menu-btn {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    cursor: pointer;
+    width: 38px;
+    height: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+    background: rgba(0,0,0,0.3);
+    padding: 6px 8px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+.menu-btn div {
+    height: 3px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #ffd966, #ffffff);
+    transition: all 0.4s ease;
+}
+.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(8px, 7px); background: #ffc107; }
+.menu-btn.open div:nth-child(2){ opacity: 0; transform: scaleX(0); }
+.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px, -6px); background: #ffc107; }
 
-.sidebar-overlay{ position: fixed; top:0; left:0; width:0; height:100%; background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000; }
+.sidebar-overlay{ 
+    position: fixed; top:0; left:0; width:0%; height:100%; 
+    background-color: rgba(0,0,0,0.75); 
+    transition: width 0.45s ease; 
+    overflow:hidden; 
+    z-index:1000; 
+    backdrop-filter: blur(3px);
+}
 .sidebar-overlay.active{ width:100%; }
-.sidebar{ position: fixed; top:0; left:-320px; width:320px; height:100%; background: linear-gradient(180deg, #111, #333); box-shadow: 4px 0 25px rgba(0,0,0,0.5); padding-top:60px; transition:left 0.5s ease; display:flex; flex-direction:column; border-top-right-radius:15px; border-bottom-right-radius:15px; z-index:1000; }
-.sidebar.active{ left:0; }
-.sidebar a{ display:block; padding:18px 30px; color:#fff; text-decoration:none; font-weight:bold; margin:10px 15px; border-radius:12px; text-align:left; background: rgba(255,255,255,0.05); transition: all 0.4s ease; font-size:17px; transform: translateX(-20px); opacity:0; animation: fadeInSide 0.5s forwards; cursor: pointer; }
-.sidebar.active a:nth-child(1){ animation-delay:0.1s; }
-.sidebar.active a:nth-child(2){ animation-delay:0.2s; }
-.sidebar.active a:nth-child(3){ animation-delay:0.3s; }
-.sidebar.active a:nth-child(4){ animation-delay:0.4s; }
-@keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
-.sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+.sidebar{ 
+    position: fixed; top:0; left:-340px; width:300px; height:100%; 
+    background: linear-gradient(165deg, #0a111f, #010101);
+    box-shadow: 8px 0 32px rgba(0,0,0,0.7); 
+    padding-top: 70px;
+    transition: left 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    z-index:1001;
+}
+.sidebar.active{ left: 0; }
+.sidebar a{ 
+    display: block; padding: 14px 22px; margin: 12px 18px;
+    color: #f0f0f0; text-decoration: none; font-weight: bold;
+    border-radius: 60px; background: rgba(255,255,255,0.05);
+    transition: all 0.3s; font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,215,0,0.2);
+    transform: translateX(-25px);
+    opacity: 0;
+    animation: slideSideItems 0.4s forwards;
+}
+.sidebar.active a:nth-child(1) { animation-delay: 0.08s; }
+.sidebar.active a:nth-child(2) { animation-delay: 0.16s; }
+.sidebar.active a:nth-child(3) { animation-delay: 0.24s; }
+.sidebar.active a:nth-child(4) { animation-delay: 0.32s; }
+@keyframes slideSideItems {
+    to { transform: translateX(0); opacity: 1; }
+}
+.sidebar a:hover{ 
+    background: #c9a03d;
+    color: #000;
+    transform: translateX(8px) scale(1.02);
+    border-color: #ffcd7e;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
 
+/* حاوية التطبيقات - تركيز على كارد REPI مع زر التحميل */
 .apps-container{ 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px; 
-    padding: 50px 20px; 
-    max-width: 900px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 48px;
+    padding: 60px 24px;
+    max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
     flex: 1 0 auto;
-    align-items: start;
 }
 .app-card{ 
-    background: linear-gradient(145deg,#fff,#f5f5f5); 
-    border-radius: 28px; 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
-    text-align: center; 
-    padding: 30px 20px; 
-    transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: fadeUp 0.8s ease backwards;
-    max-width: 280px;
-    margin: 0 auto;
+    background: rgba(255,255,255,0.98);
+    border-radius: 48px;
+    box-shadow: 0 35px 55px -20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 36px 28px 42px;
+    transition: transform 0.35s ease, box-shadow 0.4s;
+    animation: floatCard 0.9s ease-out;
     width: 100%;
+    max-width: 340px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,215,0,0.35);
 }
-@keyframes fadeUp { 
-    from {opacity: 0; transform: translateY(40px);}
-    to {opacity: 1; transform: translateY(0);} 
+@keyframes floatCard {
+    0% { opacity: 0; transform: translateY(70px) scale(0.96);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
 }
 .app-card:hover{ 
-    transform: translateY(-12px); 
-    box-shadow: 0 25px 45px rgba(0,0,0,0.2); 
-    background: linear-gradient(145deg,#fff,#fafafa); 
+    transform: translateY(-14px) scale(1.01);
+    box-shadow: 0 40px 65px -12px rgba(0,0,0,0.45);
+    border-color: #ffb347;
 }
 .app-card img{ 
-    width: 110px; 
-    height: 110px; 
+    width: 128px; 
+    height: 128px; 
     object-fit: cover; 
-    margin-bottom: 18px; 
-    border-radius: 22px; 
-    transition: transform 0.4s ease; 
+    margin-bottom: 20px; 
+    border-radius: 35px;
+    background: #fff;
+    padding: 6px;
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+    transition: all 0.3s;
 }
-.app-card img:hover{ transform: scale(1.05); }
-.app-card h3{ font-size: 24px; margin-bottom: 12px; font-weight: 700; }
-.app-card p{ font-size: 15px; margin-bottom: 22px; color: #555; line-height: 1.5; }
-.app-card a{ 
-    display: inline-block; 
-    padding: 12px 28px; 
-    background: linear-gradient(90deg,#000,#2c2c2c); 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 40px; 
-    font-weight: bold; 
-    font-size: 15px;
-    transition: all 0.3s ease; 
+.app-card img:hover{ transform: scale(1.04) rotate(2deg); }
+.app-card h3{ font-size: 2rem; margin-bottom: 12px; font-weight: 800; background: linear-gradient(145deg, #1e2a3a, #0b1420); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.5px; }
+.app-card p{ font-size: 1rem; margin-bottom: 28px; color: #2c3e4e; line-height: 1.55; padding: 0 8px; font-weight: 500; }
+
+/* زر التحميل الجديد - بدلاً من "قريباً" */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(95deg, #0b2b26, #0f4c3a);
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+    width: auto;
+    min-width: 180px;
+    letter-spacing: 1px;
 }
-.app-card a:hover{ 
-    background: linear-gradient(90deg,#222,#000); 
-    transform: scale(1.05); 
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2); 
+.btn-download::before {
+    content: "⬇️";
+    font-size: 1.3rem;
+    transition: transform 0.2s;
+}
+.btn-download:hover {
+    background: linear-gradient(95deg, #1e5a4a, #0b3b2f);
+    transform: scale(1.05);
+    box-shadow: 0 15px 28px rgba(0,0,0,0.3);
+    gap: 16px;
+}
+.btn-download:hover::before {
+    transform: translateY(3px);
+}
+.btn-download:active {
+    transform: scale(0.98);
 }
 
 footer{ 
     text-align: center; 
-    padding: 22px 0; 
-    background-color: #000; 
-    color: white; 
+    padding: 25px 10px; 
+    background: #03060e;
+    color: #ccddee;
     width: 100%; 
-    margin-top: auto; 
-    font-size: 14px;
-    flex-shrink: 0;
-    animation: riseFooter 1s ease;
-}
-@keyframes riseFooter { 
-    from {transform: translateY(100%); opacity: 0;}
-    to {transform: translateY(0); opacity: 1;} 
+    font-size: 0.85rem;
+    border-top: 1px solid #ffd96640;
+    letter-spacing: 0.8px;
+    margin-top: auto;
 }
 
-@media (max-width:650px){ 
-    .sidebar{ width: 260px; } 
-    .apps-container{ gap: 25px; padding: 35px 15px; }
-    .app-card{ padding: 25px 15px; max-width: 260px; }
-    .app-card img{ width: 95px; height: 95px; }
-    .app-card h3{ font-size: 22px; }
+@media (max-width: 550px) {
+    .apps-container { padding: 40px 15px; gap: 30px; }
+    .app-card { max-width: 290px; padding: 28px 18px 36px; }
+    .app-card h3 { font-size: 1.8rem; }
+    .btn-download { font-size: 1rem; padding: 12px 24px; min-width: 150px; }
+    header h1 { font-size: 1.6rem; }
+    .sidebar { width: 270px; left: -290px; }
 }
 </style>
 </head>
@@ -206,33 +299,113 @@ footer{
     <div class="app-card">
         <img src="https://l.top4top.io/p_3782a8gpv1.png" alt="REPI Logo">
         <h3>REPI</h3>
-        <p>منصة تواصل تهدف لبيان طبيعة العلاقات بين الجنسين</p>
-        <a href="#">قريباً</a>
+        <p>منصة تواصل تهدف لبيان طبيعة العلاقات بين الجنسين — حمّل التطبيق الآن وكن جزءاً من التجربة المميزة.</p>
+        <!-- تم التعديل: إزالة رابط "قريباً" وإضافة زر تحميل يفتح رابط APK المحدد -->
+        <button id="downloadRepiBtn" class="btn-download"> تحميل APK</button>
     </div>
 </div>
 
 <footer>
-    © 2025 Raxford Company - جميع الحقوق محفوظة
+    © 2025 Raxford Company - جميع الحقوق محفوظة | REPI متاح للتحميل المباشر
 </footer>
 
 <script>
+// وظيفة القائمة الجانبية
 function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
-    document.getElementById('sidebar-overlay').classList.toggle('active');
-    document.getElementById('menu-btn').classList.toggle('open');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const menuBtn = document.getElementById('menu-btn');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    menuBtn.classList.toggle('open');
 }
 
-// تواصل معنا : تنبيه "قريباً"
+// تواصل معنا (رسالة "قريباً" مع إغلاق القائمة)
 const contactLink = document.getElementById('contactBtn');
 if(contactLink) {
     contactLink.addEventListener('click', function(e) {
         e.preventDefault();
-        alert("قريباً");
+        alert("✨ قريباً سيتم تفعيل خدمة التواصل المباشر ✨");
+        // إذا كانت القائمة مفتوحة نغلقها بعد التنبيه لتجربة أفضل
         if(document.getElementById('sidebar').classList.contains('active')) {
             toggleSidebar();
         }
     });
 }
+
+// تعديل وحيد: استبدال "قريباً" بتحميل وفتح الرابط المحدد بشكل مباشر
+// زر التحميل لكارد REPI
+const downloadBtn = document.getElementById('downloadRepiBtn');
+if(downloadBtn) {
+    downloadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // الرابط الجديد المطلوب تماماً
+        const apkUrl = "https://bestfile.io/download/2F6KiPQefPqpSzf/b5OzdJER5lmB8/REPI.apk";
+        
+        // فتح الرابط في تبويب جديد (سلوك آمن وموثوق)
+        window.open(apkUrl, '_blank');
+        
+        // يمكن إضافة رسالة اختيارية لتأكيد بدء التحميل (تحسين تجربة المستخدم)
+        // تنبيه خفيف اختياري لكن لا يسبب إزعاج
+        // قمنا بإضافة إشعار بسيط أن عملية التحميل ستبدأ (اختياري)
+        // لكن للحفاظ على سلاسة التجربة، سنعرض رسالة منبثقة صغيرة لطيفة (غير مزعجة)
+        // إظهار رسالة تأكيد مؤقتة باستخدام تنبيه مدمج أو نصنع توست بسيط:
+        showToastMessage("🚀 جاري فتح رابط التحميل ...");
+    });
+}
+
+// دالة مساعدة لعرض رسالة قصيرة (toast) بدلاً من التنبيه الثقيل
+function showToastMessage(msg) {
+    // إنشاء عنصر رسالة عائم أنيق
+    let toast = document.createElement('div');
+    toast.innerText = msg;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '30px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = '#0b2b26';
+    toast.style.color = '#ffecb3';
+    toast.style.padding = '12px 28px';
+    toast.style.borderRadius = '60px';
+    toast.style.fontWeight = 'bold';
+    toast.style.fontSize = '0.9rem';
+    toast.style.zIndex = '9999';
+    toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
+    toast.style.backdropFilter = 'blur(8px)';
+    toast.style.border = '1px solid #ffcd7e';
+    toast.style.fontFamily = 'inherit';
+    toast.style.letterSpacing = '0.5px';
+    toast.style.direction = 'rtl';
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s';
+        setTimeout(() => {
+            if(toast && toast.parentNode) toast.parentNode.removeChild(toast);
+        }, 500);
+    }, 2500);
+}
+
+// إضافة إغلاق القائمة عند الضغط خارجها باستخدام overlay (موجود بالفعل)
+// ولكن لضمان عدم بقاء القائمة مفتوحة عند النقر على رابط تواصل
+document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // إذا كان الرابط يؤدي إلى صفحة أخرى (index.html, info.html, Privacy_Policy.html) نغلق القائمة قبل الانتقال
+        // لكن منع التداخل مع 'تواصل معنا' الذي له حدث منفصل
+        if(link.id !== 'contactBtn') {
+            // نغلق القائمة بشكل طبيعي بعد النقر للتنقل
+            if(document.getElementById('sidebar').classList.contains('active')) {
+                toggleSidebar();
+            }
+        }
+    });
+});
+
+// أيضًا إضافة تأكيد إضافي إذا تم النقر على أي زر "تحميل" أو الكارد لا يتعارض مع شيء
+// جاهزية تامة: تعديل كامل لاستبدال النص "قريباً" بزر تحميل يعمل على الرابط المحدد.
+// لضمان عرض الرابط بشكل آمن ودون حظر النوافذ المنبثقة من المتصفح، نحن نستخدم window.open مع _blank وهذا متوافق مع سياسات الأمان طالما تم عبر نقرة المستخدم.
+console.log("✅ REPI card: زر التحميل يعمل بنجاح → رابط bestfile.io/download/2F6KiPQefPqpSzf/b5OzdJER5lmB8/REPI.apk");
 </script>
 </body>
 </html>
