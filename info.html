@@ -59,6 +59,29 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 footer{ text-align:center; padding:25px 0; background-color:#000; color:white; margin-top:40px; animation: riseFooter 1.5s ease; }
 @keyframes riseFooter { from {transform: translateY(100%); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
 
+/* توست */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #000;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 @media (max-width:600px){ .sidebar{ width:250px; } }
 </style>
 </head>
@@ -73,10 +96,13 @@ footer{ text-align:center; padding:25px 0; background-color:#000; color:white; m
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 <div class="sidebar" id="sidebar">
     <a href="index.html">خدمات</a>
-    <a href="mailto:info@raxford.site">تواصل معنا</a>
+    <a href="#" onclick="showToast(event)">تواصل معنا</a>
     <a href="info.html">من نحن؟</a>
     <a href="Privacy_Policy.html">سياسة الخصوصية</a>
 </div>
+
+<!-- توست -->
+<div class="toast" id="toast">قريباً</div>
 
 <div class="about-container">
     <h2>من نحن؟</h2>
@@ -86,7 +112,7 @@ footer{ text-align:center; padding:25px 0; background-color:#000; color:white; m
 </div>
 
 <footer>
-    © 2025 Raxford Team - جميع الحقوق محفوظة
+    © 2026 Raxford Team - جميع الحقوق محفوظة
 </footer>
 
 <script>
@@ -94,6 +120,15 @@ function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('sidebar-overlay').classList.toggle('active');
     document.getElementById('menu-btn').classList.toggle('open');
+}
+
+function showToast(event) {
+    event.preventDefault();
+    var toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(function() {
+        toast.classList.remove('show');
+    }, 2000);
 }
 </script>
 
