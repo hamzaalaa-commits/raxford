@@ -159,6 +159,29 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
     box-shadow: 0 6px 14px rgba(0,0,0,0.2); 
 }
 
+/* توست */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #000;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 footer{ 
     text-align: center; 
     padding: 22px 0; 
@@ -202,6 +225,9 @@ footer{
     <a href="Privacy_Policy.html">سياسة الخصوصية</a>
 </div>
 
+<!-- توست -->
+<div class="toast" id="toast">قريباً</div>
+
 <div class="apps-container">
     <div class="app-card">
         <img src="https://l.top4top.io/p_3782a8gpv1.png" alt="REPI Logo">
@@ -222,15 +248,16 @@ function toggleSidebar() {
     document.getElementById('menu-btn').classList.toggle('open');
 }
 
-// تواصل معنا : تنبيه "قريباً"
-const contactLink = document.getElementById('contactBtn');
-if(contactLink) {
-    contactLink.addEventListener('click', function(e) {
+// تواصل معنا : توست "قريباً"
+var contactBtn = document.getElementById('contactBtn');
+if(contactBtn) {
+    contactBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        alert("قريباً");
-        if(document.getElementById('sidebar').classList.contains('active')) {
-            toggleSidebar();
-        }
+        var toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(function() {
+            toast.classList.remove('show');
+        }, 2000);
     });
 }
 </script>
