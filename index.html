@@ -2,23 +2,23 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raxford Team</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Raxford Team | REPI V2</title>
 
 <!-- Favicon -->
 <link rel="icon" type="image/jpeg" href="https://j.top4top.io/p_3782nqn5c1.jpg">
 <link rel="shortcut icon" href="https://j.top4top.io/p_3782nqn5c1.jpg">
 <link rel="apple-touch-icon" href="https://j.top4top.io/p_3782nqn5c1.jpg">
 
-<!-- Open Graph Data (تم التحديث حسب الطلب) -->
+<!-- Open Graph Data -->
 <meta property="og:title" content="Raxford Team">
-<meta property="og:description" content="">
+<meta property="og:description" content="منصة REPI - تواصل ووعي رقمي">
 <meta property="og:image" content="https://j.top4top.io/p_3782cjacn1.jpg">
 <meta property="og:image:alt" content="Raxford Team">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://raxford.site">
 
-<!-- Twitter Card Data (متوافقة مع التعديلات الجديدة) -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Raxford Team">
 <meta name="twitter:description" content="">
@@ -33,149 +33,272 @@
     font-style: normal;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'MyFont', 'Segoe UI', Arial, sans-serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'MyFont', 'Segoe UI', 'Tahoma', Arial, sans-serif; }
 
 body {
     background-color: #f0f2f5;
-    color: #333;
+    color: #1e2a3e;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    animation: fadeInBody 1.5s ease-in-out;
+    animation: fadeInBody 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 @keyframes fadeInBody {
-    from {opacity: 0; transform: translateY(20px);}
+    from {opacity: 0; transform: translateY(18px);}
     to {opacity: 1; transform: translateY(0);}
 }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #111; }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #444, #000); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #666, #111); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #111; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3a3a3a, #000); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
 
 header {
-    background: linear-gradient(270deg, #000, #222, #000);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite, dropHeader 1.5s ease;
+    background: linear-gradient(135deg, #0a0c10 0%, #1a1f2a 50%, #0a0c10 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite, dropHeader 0.9s ease-out;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 28px 20px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-@keyframes gradientBG { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%;} }
-@keyframes dropHeader { from {transform: translateY(-100%);} to {transform: translateY(0);} }
+@keyframes gradientShift { 
+    0% {background-position: 0% 0%}
+    50% {background-position: 100% 20%}
+    100% {background-position: 0% 0%}
+}
+@keyframes dropHeader { 
+    from {transform: translateY(-100%); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;} 
+}
 
 header h1 { 
-    font-size: 28px; 
-    margin-bottom: 10px; 
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
+    font-size: 32px; 
+    margin-bottom: 12px; 
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6); 
     opacity: 0;
-    animation: fadeInTitle 2s ease forwards;
+    animation: fadeInTitle 1s forwards 0.2s;
 }
-@keyframes fadeInTitle { from {opacity: 0; transform: translateY(-15px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes fadeInTitle { 
+    from {opacity: 0; transform: translateY(-12px);} 
+    to {opacity: 1; transform: translateY(0);} 
+}
 
-header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
-header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
+header img { 
+    width: 150px; 
+    border-radius: 20px; 
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,215,0,0.3);
+}
+header img:hover { 
+    transform: scale(1.04) rotate(-2deg); 
+    filter: drop-shadow(0 0 12px rgba(255,215,0,0.5)); 
+    border-color: rgba(255,215,0,0.7);
+}
 
-.menu-btn { position: absolute; top: 20px; left: 20px; cursor: pointer; width: 35px; height: 25px; display: flex; flex-direction: column; justify-content: space-between; z-index: 1001; }
-.menu-btn div { height: 4px; border-radius: 2px; background: linear-gradient(90deg, #fff, #ccc); transition: all 0.5s ease; }
-.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px);}
+.menu-btn { 
+    position: absolute; 
+    top: 28px; 
+    left: 24px; 
+    cursor: pointer; 
+    width: 36px; 
+    height: 26px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    z-index: 1001; 
+    background: rgba(0,0,0,0.4);
+    padding: 5px 8px;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+.menu-btn div { 
+    height: 3px; 
+    border-radius: 4px; 
+    background: linear-gradient(90deg, #ffffff, #e0e0e0); 
+    transition: all 0.35s ease; 
+}
+.menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px); background: #ffd966;}
 .menu-btn.open div:nth-child(2){opacity:0;}
-.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
+.menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px); background: #ffd966;}
 
-.sidebar-overlay{ position: fixed; top:0; left:0; width:0; height:100%; background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000; }
+.sidebar-overlay{ 
+    position: fixed; top:0; left:0; width:0; height:100%; 
+    background-color: rgba(8, 8, 12, 0.85); 
+    backdrop-filter: blur(4px);
+    transition: width 0.4s ease; 
+    overflow:hidden; z-index:1000; 
+}
 .sidebar-overlay.active{ width:100%; }
-.sidebar{ position: fixed; top:0; left:-320px; width:320px; height:100%; background: linear-gradient(180deg, #111, #333); box-shadow: 4px 0 25px rgba(0,0,0,0.5); padding-top:60px; transition:left 0.5s ease; display:flex; flex-direction:column; border-top-right-radius:15px; border-bottom-right-radius:15px; z-index:1000; }
+.sidebar{ 
+    position: fixed; top:0; left:-320px; width:300px; height:100%; 
+    background: linear-gradient(145deg, #101214, #1b1e24); 
+    box-shadow: 8px 0 32px rgba(0,0,0,0.6); 
+    padding-top: 70px; 
+    transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1); 
+    display:flex; flex-direction:column; 
+    border-top-right-radius: 28px; 
+    border-bottom-right-radius: 28px; 
+    z-index:1001; 
+}
 .sidebar.active{ left:0; }
-.sidebar a{ display:block; padding:18px 30px; color:#fff; text-decoration:none; font-weight:bold; margin:10px 15px; border-radius:12px; text-align:left; background: rgba(255,255,255,0.05); transition: all 0.4s ease; font-size:17px; transform: translateX(-20px); opacity:0; animation: fadeInSide 0.5s forwards; cursor: pointer; }
-.sidebar.active a:nth-child(1){ animation-delay:0.1s; }
-.sidebar.active a:nth-child(2){ animation-delay:0.2s; }
-.sidebar.active a:nth-child(3){ animation-delay:0.3s; }
-.sidebar.active a:nth-child(4){ animation-delay:0.4s; }
+.sidebar a{ 
+    display:block; padding:14px 28px; color:#f0f0f0; text-decoration:none; 
+    font-weight:600; margin:8px 18px; border-radius:40px; text-align:right;
+    background: rgba(255,255,255,0.03); 
+    transition: all 0.25s ease; 
+    font-size: 18px;
+    transform: translateX(-20px); opacity:0;
+    animation: fadeInSide 0.4s forwards; cursor: pointer;
+    border-right: 3px solid transparent;
+}
+.sidebar.active a:nth-child(1){ animation-delay:0.05s; }
+.sidebar.active a:nth-child(2){ animation-delay:0.12s; }
+.sidebar.active a:nth-child(3){ animation-delay:0.19s; }
+.sidebar.active a:nth-child(4){ animation-delay:0.26s; }
 @keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
-.sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+.sidebar a:hover{ 
+    background: rgba(255,215,0,0.15); 
+    transform: translateX(5px) scale(1.02); 
+    border-right-color: #ffd966;
+    color: #ffea9e;
+}
 
 .apps-container{ 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px; 
-    padding: 50px 20px; 
-    max-width: 900px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 70px; 
+    max-width: 1100px; 
     margin: 0 auto;
     width: 100%;
     flex: 1 0 auto;
-    align-items: start;
 }
 .app-card{ 
-    background: linear-gradient(145deg,#fff,#f5f5f5); 
-    border-radius: 28px; 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+    background: linear-gradient(145deg, #ffffff, #f8fafc); 
+    border-radius: 48px; 
+    box-shadow: 0 30px 45px -15px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.8); 
     text-align: center; 
-    padding: 30px 20px; 
-    transition: transform 0.4s ease, box-shadow 0.4s ease; 
-    animation: fadeUp 0.8s ease backwards;
-    max-width: 280px;
-    margin: 0 auto;
+    padding: 40px 28px 38px; 
+    transition: all 0.35s ease; 
+    animation: fadeUp 0.7s ease backwards;
+    max-width: 420px;
     width: 100%;
+    margin: 0 auto;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,255,255,0.5);
 }
 @keyframes fadeUp { 
-    from {opacity: 0; transform: translateY(40px);}
-    to {opacity: 1; transform: translateY(0);} 
+    from {opacity: 0; transform: translateY(50px) scale(0.96);}
+    to {opacity: 1; transform: translateY(0) scale(1);} 
 }
 .app-card:hover{ 
-    transform: translateY(-12px); 
-    box-shadow: 0 25px 45px rgba(0,0,0,0.2); 
-    background: linear-gradient(145deg,#fff,#fafafa); 
+    transform: translateY(-8px) scale(1.01); 
+    box-shadow: 0 38px 55px -18px rgba(0,0,0,0.3); 
+    background: #ffffff; 
 }
 .app-card img{ 
-    width: 110px; 
-    height: 110px; 
-    object-fit: cover; 
-    margin-bottom: 18px; 
-    border-radius: 22px; 
-    transition: transform 0.4s ease; 
+    width: 130px; 
+    height: 130px; 
+    object-fit: contain; 
+    margin-bottom: 22px; 
+    border-radius: 32px; 
+    transition: transform 0.3s ease; 
+    background: rgba(0,0,0,0.02);
+    padding: 6px;
 }
-.app-card img:hover{ transform: scale(1.05); }
-.app-card h3{ font-size: 24px; margin-bottom: 12px; font-weight: 700; }
-.app-card p{ font-size: 15px; margin-bottom: 22px; color: #555; line-height: 1.5; }
-.app-card a{ 
+.app-card img:hover{ transform: scale(1.03) rotate(1deg); }
+.app-card h3{ font-size: 32px; margin-bottom: 16px; font-weight: 800; background: linear-gradient(135deg, #1e2a3a, #0f172a); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.5px; }
+.app-card p{ font-size: 16px; margin-bottom: 28px; color: #334155; line-height: 1.55; font-weight: 500; }
+
+/* حاوية الزر والرابط أسفله */
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+.download-btn {
     display: inline-block; 
-    padding: 12px 28px; 
-    background: linear-gradient(90deg,#000,#2c2c2c); 
+    padding: 14px 38px; 
+    background: linear-gradient(105deg, #0b1120, #1e293b); 
     color: white; 
     text-decoration: none; 
-    border-radius: 40px; 
+    border-radius: 60px; 
     font-weight: bold; 
-    font-size: 15px;
-    transition: all 0.3s ease; 
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease; 
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    width: fit-content;
+    min-width: 160px;
+    border: 1px solid rgba(255,215,0,0.3);
 }
-.app-card a:hover{ 
-    background: linear-gradient(90deg,#222,#000); 
-    transform: scale(1.05); 
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2); 
+.download-btn:hover { 
+    background: linear-gradient(105deg, #000000, #111827); 
+    transform: scale(1.04); 
+    box-shadow: 0 12px 22px rgba(0,0,0,0.3);
+    border-color: #ffd966;
+}
+/* الرابط الأزرق القابل للضغط */
+.repi-link {
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e88e5;
+    background-color: rgba(30, 136, 229, 0.08);
+    padding: 8px 20px;
+    border-radius: 60px;
+    text-decoration: none;
+    transition: all 0.2s;
+    direction: ltr;
+    unicode-bidi: embed;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(30, 136, 229, 0.3);
+}
+.repi-link:hover {
+    background-color: #1e88e5;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(30,136,229,0.4);
+    border-color: transparent;
+}
+/* تحسين المظهر للجوال */
+@media (max-width:550px) {
+    .repi-link { font-size: 0.9rem; padding: 6px 14px; }
+    .download-btn { padding: 12px 30px; font-size: 1rem; }
+    .app-card { padding: 30px 20px; max-width: 90%; }
+    .app-card h3 { font-size: 28px; }
 }
 
-/* توست */
 .toast {
     position: fixed;
-    bottom: 30px;
+    bottom: 35px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background: #000;
-    color: #fff;
-    padding: 14px 30px;
-    border-radius: 30px;
+    background: #0f172ad9;
+    backdrop-filter: blur(14px);
+    color: #ffecb3;
+    padding: 12px 28px;
+    border-radius: 50px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     z-index: 9999;
     opacity: 0;
-    transition: all 0.4s ease;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
     pointer-events: none;
+    font-family: monospace;
+    border-left: 5px solid #ffd966;
 }
 .toast.show {
     opacity: 1;
@@ -184,26 +307,16 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 
 footer{ 
     text-align: center; 
-    padding: 22px 0; 
-    background-color: #000; 
-    color: white; 
+    padding: 24px 16px; 
+    background: #0a0c10; 
+    color: #b0b3b8; 
     width: 100%; 
     margin-top: auto; 
     font-size: 14px;
     flex-shrink: 0;
-    animation: riseFooter 1s ease;
-}
-@keyframes riseFooter { 
-    from {transform: translateY(100%); opacity: 0;}
-    to {transform: translateY(0); opacity: 1;} 
-}
-
-@media (max-width:650px){ 
-    .sidebar{ width: 260px; } 
-    .apps-container{ gap: 25px; padding: 35px 15px; }
-    .app-card{ padding: 25px 15px; max-width: 260px; }
-    .app-card img{ width: 95px; height: 95px; }
-    .app-card h3{ font-size: 22px; }
+    border-top: 1px solid #23272e;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 </style>
 </head>
@@ -225,15 +338,21 @@ footer{
     <a href="Privacy_Policy.html">سياسة الخصوصية</a>
 </div>
 
-<!-- توست -->
-<div class="toast" id="toast">قريباً</div>
+<div class="toast" id="toast">✨ قريباً ✨</div>
 
 <div class="apps-container">
     <div class="app-card">
         <img src="https://l.top4top.io/p_3782a8gpv1.png" alt="REPI Logo">
-        <h3>REPI</h3>
+        <h3>REPI V2</h3>
         <p>منصة تواصل تهدف لبيان طبيعة العلاقات بين الجنسين</p>
-        <a href="https://www.dropbox.com/scl/fi/jhyztsi0intsa8tt6xsyq/REPI-release.apk?rlkey=8h2ujn00wqct866c4898g0n0m&st=pu61n6am&dl=1" target="_blank">تحميل</a>
+        
+        <!-- تعديل دقيق: وضع زر التحميل ثم أسفله الرابط الأزرق القابل للضغط -->
+        <div class="button-wrapper">
+            <a href="https://www.dropbox.com/scl/fi/e3wa066yny3actcn90yyt/REPI-release.apk?rlkey=6tqraa38wtcki2wrlhdkwuh2n&st=1p9frqhk&dl=1" class="download-btn" target="_blank" rel="noopener noreferrer">📥 تحميل</a>
+            
+            <!-- الرابط المطلوب: https://repi_social  لون أزرق وقابل للضغط (يفتح في نافذة جديدة) -->
+            <a href="https://t.me/repi_social" class="repi-link" target="_blank" rel="noopener noreferrer">https://repi_social</a>
+        </div>
     </div>
 </div>
 
@@ -243,23 +362,50 @@ footer{
 
 <script>
 function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
-    document.getElementById('sidebar-overlay').classList.toggle('active');
-    document.getElementById('menu-btn').classList.toggle('open');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const menuBtn = document.getElementById('menu-btn');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    menuBtn.classList.toggle('open');
 }
 
-// تواصل معنا : توست "قريباً"
-var contactBtn = document.getElementById('contactBtn');
-if(contactBtn) {
+// تواصل معنا: إظهار توست "قريباً"
+const contactBtn = document.getElementById('contactBtn');
+if (contactBtn) {
     contactBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        var toast = document.getElementById('toast');
+        const toast = document.getElementById('toast');
         toast.classList.add('show');
-        setTimeout(function() {
+        setTimeout(() => {
             toast.classList.remove('show');
-        }, 2000);
+        }, 2100);
     });
 }
+
+// إغلاق السايد بار عند النقر على رابط (للملاءمة)
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            // اختياري: اغلاق القائمة بعد الضغط عدا الوصلات ذات الهاش أو الوقاية
+            const sidebarActive = document.getElementById('sidebar').classList.contains('active');
+            if (sidebarActive) {
+                setTimeout(() => {
+                    toggleSidebar();
+                }, 80);
+            }
+        }
+    });
+});
+
+// معالجة إضافية للرابط الأزرق: يفتح كما هو مطلوب مع نافذة جديدة، ويمنع أي أخطاء
+document.querySelectorAll('.repi-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // التأكد من أن الرابط يعمل بشكل طبيعي
+        console.log('تم النقر على الرابط الأزرق:', link.href);
+    });
+});
 </script>
 </body>
 </html>
