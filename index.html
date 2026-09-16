@@ -148,31 +148,30 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
     gap: 16px;
     margin-top: 8px;
 }
+
+/* الأزرار باللون الأسود والخط الأبيض */
 .download-btn {
     display: inline-block; 
     padding: 14px 38px; 
-    background: linear-gradient(105deg, #0b1120, #1e293b); 
-    color: white; 
+    background: #000000; 
+    color: #ffffff; 
     text-decoration: none; 
     border-radius: 60px; 
     font-weight: bold; 
     font-size: 1.1rem;
     letter-spacing: 0.5px;
     transition: all 0.25s ease; 
-    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
     width: fit-content;
     min-width: 160px;
-    border: 1px solid rgba(255,215,0,0.3);
+    border: 1px solid #333333;
+    user-select: none;
 }
 
-/* حالة الأزرار غير المفعّلة وقيد التطوير */
-.download-btn.disabled {
-    background: #475569;
-    color: #cbd5e1;
-    cursor: not-allowed;
-    border-color: transparent;
-    box-shadow: none;
-    pointer-events: none;
+.download-btn.black-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    cursor: default;
 }
 
 @media (max-width:550px) {
@@ -219,21 +218,21 @@ footer{
     
     <!-- Card 1: Middle East Core -->
     <div class="app-card">
-        <img src="yue9jbd3cmtwdcgefqvv.jpg" alt="Middle East Core Logo">
+        <img src="https://res.cloudinary.com/dbahe7lxz/image/upload/v1789579130/idraaak/yue9jbd3cmtwdcgefqvv.jpg" alt="Middle East Core Logo">
         <h3>Middle East Core</h3>
         <p>أخبار الشرق الأوسط لحظة بلحظة</p>
         <div class="button-wrapper">
-            <span class="download-btn disabled">اختبار مغلق</span>
+            <span class="download-btn black-btn">اختبار مغلق</span>
         </div>
     </div>
 
     <!-- Card 2: Cipher -->
     <div class="app-card">
-        <img src="ec2kr4rtvsjyk8lxigre.png" alt="Cipher Logo">
+        <img src="https://res.cloudinary.com/dbahe7lxz/image/upload/v1789579149/idraaak/ec2kr4rtvsjyk8lxigre.png" alt="Cipher Logo">
         <h3>Cipher</h3>
         <p>منصة تواصل خفيفة End To End Encryption</p>
         <div class="button-wrapper">
-            <span class="download-btn disabled">قريباً</span>
+            <span class="download-btn black-btn">قريباً</span>
         </div>
     </div>
 
