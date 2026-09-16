@@ -56,9 +56,7 @@ body {
 ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3a3a3a, #000); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #555; }
 
-/* ==========================================================================
-   تعديل الهيدر ليطابق ملف info تماماً (تصميم وشعار الوسطي)
-   ========================================================================== */
+/* Header Styles */
 header {
     background: linear-gradient(270deg, #000, #222, #000);
     background-size: 600% 600%;
@@ -73,16 +71,14 @@ header h1 { font-size: 28px; margin-bottom: 10px; text-shadow: 1px 1px 5px rgba(
 header img { width: 160px; border-radius: 12px; transition: transform 0.5s, filter 0.5s; }
 header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 0 15px #fff); }
 
-/* زر القائمة الجانبية المطابق لملف info */
+/* Menu Button */
 .menu-btn { position: absolute; top: 20px; left: 20px; cursor: pointer; width: 35px; height: 25px; display: flex; flex-direction: column; justify-content: space-between; z-index: 1001; }
 .menu-btn div { height: 4px; border-radius: 2px; background: linear-gradient(90deg, #fff, #ccc); transition: all 0.5s ease; }
 .menu-btn.open div:nth-child(1){ transform: rotate(45deg) translate(6px,6px);}
 .menu-btn.open div:nth-child(2){opacity:0;}
 .menu-btn.open div:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px);}
 
-/* ==========================================================================
-   تعديل السايد بار والأوفيرلاي ليطابق ملف info تماماً
-   ========================================================================== */
+/* Sidebar & Overlay */
 .sidebar-overlay{ position: fixed; top:0; left:0; width:0; height:100%; background-color: rgba(0,0,0,0.7); transition: width 0.5s ease; overflow:hidden; z-index:1000; }
 .sidebar-overlay.active{ width:100%; }
 .sidebar{ position: fixed; top:0; left:-320px; width:320px; height:100%; background: linear-gradient(180deg, #111, #333); box-shadow: 4px 0 25px rgba(0,0,0,0.5); padding-top:60px; transition:left 0.5s ease; display:flex; flex-direction:column; border-top-right-radius:15px; border-bottom-right-radius:15px; z-index:1000; }
@@ -95,11 +91,13 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
 @keyframes fadeInSide{ to{ transform: translateX(0); opacity:1; } }
 .sidebar a:hover{ background: rgba(255,255,255,0.25); transform: translateX(10px) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
 
-/* بقية ستايلات كود الاندكس (محتوى البطاقات والزر الأزرق) */
+/* Apps Layout Container */
 .apps-container{ 
     display: flex; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     padding: 50px 20px 70px; 
     max-width: 1100px; 
     margin: 0 auto;
@@ -140,7 +138,7 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
     padding: 6px;
 }
 .app-card img:hover{ transform: scale(1.03) rotate(1deg); }
-.app-card h3{ font-size: 32px; margin-bottom: 16px; font-weight: 800; background: linear-gradient(135deg, #1e2a3a, #0f172a); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.5px; }
+.app-card h3{ font-size: 30px; margin-bottom: 12px; font-weight: 800; background: linear-gradient(135deg, #1e2a3a, #0f172a); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.5px; }
 .app-card p{ font-size: 16px; margin-bottom: 28px; color: #334155; line-height: 1.55; font-weight: 500; }
 
 .button-wrapper {
@@ -166,15 +164,20 @@ header img:hover { transform: rotate(-10deg) scale(1.05); filter: drop-shadow(0 
     min-width: 160px;
     border: 1px solid rgba(255,215,0,0.3);
 }
-.download-btn:hover { 
-    background: linear-gradient(105deg, #000000, #111827); 
-    transform: scale(1.04); 
-    box-shadow: 0 12px 22px rgba(0,0,0,0.3);
-    border-color: #ffd966;
+
+/* حالة الأزرار غير المفعّلة وقيد التطوير */
+.download-btn.disabled {
+    background: #475569;
+    color: #cbd5e1;
+    cursor: not-allowed;
+    border-color: transparent;
+    box-shadow: none;
+    pointer-events: none;
 }
+
 @media (max-width:550px) {
     .app-card { padding: 30px 20px; max-width: 90%; }
-    .app-card h3 { font-size: 28px; }
+    .app-card h3 { font-size: 26px; }
 }
 
 footer{ 
@@ -195,14 +198,14 @@ footer{
 </head>
 <body>
 
-<!-- الهيدر والزر متطابقين مع كود ملف info -->
+<!-- Header -->
 <header>
     <div class="menu-btn" id="menu-btn" onclick="toggleSidebar()"><div></div><div></div><div></div></div>
     <h1>Raxford Team</h1>
     <img src="https://www2.0zz0.com/2025/09/11/13/662006402.png" alt="Redbily Logo">
 </header>
 
-<!-- السايد بار والغطاء الشفاف متطابقين مع كود ملف info -->
+<!-- Sidebar Overlay -->
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 <div class="sidebar" id="sidebar">
     <a href="index.html">خدمات</a>
@@ -211,24 +214,41 @@ footer{
     <a href="Privacy_Policy.html">سياسة الخصوصية</a>
 </div>
 
+<!-- Apps Container -->
 <div class="apps-container">
+    
+    <!-- Card 1: Middle East Core -->
     <div class="app-card">
-        <h3>سيتم عرض الخدمات هنا قريباً</h3>
+        <img src="yue9jbd3cmtwdcgefqvv.jpg" alt="Middle East Core Logo">
+        <h3>Middle East Core</h3>
+        <p>أخبار الشرق الأوسط لحظة بلحظة</p>
+        <div class="button-wrapper">
+            <span class="download-btn disabled">اختبار مغلق</span>
+        </div>
     </div>
+
+    <!-- Card 2: Cipher -->
+    <div class="app-card">
+        <img src="ec2kr4rtvsjyk8lxigre.png" alt="Cipher Logo">
+        <h3>Cipher</h3>
+        <p>منصة تواصل خفيفة End To End Encryption</p>
+        <div class="button-wrapper">
+            <span class="download-btn disabled">قريباً</span>
+        </div>
+    </div>
+
 </div>
 
 <footer>
     © 2026 Raxford Team - جميع الحقوق محفوظة
 </footer>
 
-<!-- استخدام دالة الجافاسكريبت المطابقة لملف info لفتح وإغلاق القائمة بسلاسة -->
 <script>
 function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('sidebar-overlay').classList.toggle('active');
     document.getElementById('menu-btn').classList.toggle('open');
 }
-
 </script>
 </body>
 </html>
